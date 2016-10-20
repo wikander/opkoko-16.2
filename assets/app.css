@@ -53,14 +53,14 @@ body {
   animation-timing-function: linear;
 }
 
-p.animate-css {
+p.animate {
   text-align: center;
   margin: 0;
   padding: 0;
   font-size:
 }
 
-p.animate-css > i {
+p.animate > i {
   font-size: 15em;
   line-height: 1em;
 }
