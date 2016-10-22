@@ -14,7 +14,12 @@ const db = openDatabase('koko', '1.0', 'OPKoKo 16.2 databasen', 2 * 1024 * 1024)
 console.log("%cOPKoKo 16.2!", "font-size: 45px; background: red; color: white; text-align: center; width: 100%; padding: 8px; margin: 8px;");
 fetchStuff();
 
-for (let i = 0; i < 20; i++) {
+
+db.transaction(function (tx) {
+ tx.executeSql('CREATE TABLE IF NOT EXISTS FIB (fib)');
+ tx.executeSql(`DELETE FROM FIB`);
+});
+for (let i = 0; i < 80; i++) {
   addFib(fibonacciGenerator.next().value);
 }
 
